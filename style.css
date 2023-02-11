@@ -1,0 +1,17 @@
+div.container{
+  display: flex;
+}
+div.joueur{
+  height: 600px;
+  width: 50%;
+  background-color: aquamarine;
+}
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+.centrale{
+  position: absolute;
+  top: 40px; left: 40px;
+
+}
