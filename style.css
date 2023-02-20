@@ -1,4 +1,4 @@
-div.container{
+/* div.container{
   display: flex;
 }
 div.joueur{
@@ -6,12 +6,31 @@ div.joueur{
   width: 50%;
   background-color: aquamarine;
 }
+*/
 body{
   font-family: 'Lato', sans-serif;
 }
-
 .centrale{
   position: absolute;
   top: 40px; left: 40px;
 
+} 
+.bi{
+color: red;
+}
+.reset{
+  padding-top: 30px;
+}
+
+  .container,p {
+    display:block; 
+    text-align: center;
+    
+  }
+  .joueur,.score_j1{
+    font-size: 2REM;
+  }
+  
+.flex{
+  display: flex;
 }
