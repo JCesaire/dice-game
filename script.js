@@ -31,7 +31,7 @@ function ROLL(){
       if(player1==true){
         
          Roundj1.innerHTML=0;
-         player=false;
+         player1=false;
       }else{
         
         Roundj2.innerHTML=0;
