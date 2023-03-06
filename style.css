@@ -12,9 +12,18 @@ body{
 }
 .centrale{
   position: absolute;
-  top: 40px; left: 40px;
+  display: block;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-190%);
+ 
 
 } 
+.centrale .espace {
+padding: 20px;
+text-align: center;
+
+
+}
 .bi{
 color: red;
 }
@@ -26,11 +35,20 @@ color: red;
     display:block; 
     text-align: center;
     
+    
+    
+  }
+  .container{
+    border: solid  black;
   }
   .joueur,.score{
-    font-size: 2REM;
+    font-size: 4REM;
   }
   
 .flex{
   display: flex;
+}
+
+.Globalj2,.Globalj1{
+  margin-top: 80%;
 }
