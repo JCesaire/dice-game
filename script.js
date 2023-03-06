@@ -1,12 +1,14 @@
 const buttonHOLD = document.getElementById("playerHold");
 const buttonDICE = document.getElementById("playerDICE");
+const reset=document.querySelector(".reset");
+
 
 var GlobalJ1=  document.querySelector(".Globalj1 p");
 var GlobalJ2=  document.querySelector(".Globalj2 p");
 
 var Roundj1=  document.querySelector(".roundj1 p");
 var Roundj2=  document.querySelector(".roundj2 p");
-
+console.log(reset.innerHTML);
 //pour savoir c'est au tour de qui !!!
 var player1=true;
 //function HOLD 
@@ -46,6 +48,17 @@ function ROLL(){
       }else{ Roundj2.innerHTML=parseInt(Roundj2.innerHTML)+scoreTemp;}
     }
   }
-//creation de levent HOLD
+
+//function RESET GAME
+  function resetgame(){
+    player1=true;
+    Roundj1.innerHTML=0;
+    Roundj2.innerHTML=0;
+    GlobalJ1.innerHTML=0;
+    GlobalJ2.innerHTML=0;
+
+  }
+//creation des events 
 buttonHOLD.addEventListener('click',HOLD);
 buttonDICE.addEventListener('click',ROLL);
+reset.addEventListener('click',resetgame);
