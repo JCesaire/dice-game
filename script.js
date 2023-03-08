@@ -87,28 +87,28 @@ if(GlobalJ2.innerHTML>=100){
 function DICE(des){
 switch (des) {
   case 1:
-    img.src="image/Dice-1.png"
+    img.src="Image/Dice-1.png"
     break;
   
   case 2:
-    img.src="image/Dice-2.png"
+    img.src="Image/Dice-2.png"
     break;
   
   case 3:
-    img.src="image/Dice-3.png"
+    img.src="Image/Dice-3.png"
     break;
   
   case 4:
-    img.src="image/Dice-4.png"
+    img.src="Image/Dice-4.png"
     break;
   
   case 5:
-    img.src="image/Dice-5.png"
+    img.src="Image/Dice-5.png"
 
     break;
   
   case 6:
-    img.src="image/Dice-6.png"
+    img.src="Image/Dice-6.png"
     break;
 
 
