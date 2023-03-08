@@ -1,6 +1,9 @@
 const buttonHOLD = document.getElementById("playerHold");
 const buttonDICE = document.getElementById("playerDICE");
 const reset=document.querySelector(".reset");
+const img=document.querySelector("img");
+const container1=document.querySelector("#first");
+const container2=document.querySelector("#second");
 
 
 var GlobalJ1=  document.querySelector(".Globalj1 p");
@@ -18,12 +21,15 @@ function HOLD(){
     player1=false;
     console.log(parseInt(Roundj1.innerHTML)+ parseInt(GlobalJ1.innerHTML));
     Roundj1.innerHTML=0;
+    win();
   }else{
     GlobalJ2.innerHTML=parseInt(Roundj2.innerHTML) + parseInt(GlobalJ2.innerHTML);
     player1=true;
     console.log(GlobalJ2.innerHTML)
     Roundj2.innerHTML=0;
+    win();
   }
+  setbackground();
 }
   //function ROLL DICE
 function ROLL(){
@@ -44,9 +50,12 @@ function ROLL(){
     }else{
       if(player1==true){
         Roundj1.innerHTML=parseInt(Roundj1.innerHTML)+scoreTemp;
+        
 
       }else{ Roundj2.innerHTML=parseInt(Roundj2.innerHTML)+scoreTemp;}
     }
+    DICE(scoreTemp);
+    setbackground();
   }
 
 //function RESET GAME
@@ -56,8 +65,71 @@ function ROLL(){
     Roundj2.innerHTML=0;
     GlobalJ1.innerHTML=0;
     GlobalJ2.innerHTML=0;
+    buttonDICE.removeAttribute("disabled")
+    buttonHOLD.removeAttribute("disabled")
 
   }
+
+//wining condition 
+function win(){
+if(GlobalJ1.innerHTML>=100){
+  alert("Félicitation Joueur 1 vous avez gagné");
+  buttonDICE.setAttribute("disabled","true");
+  buttonHOLD.setAttribute("disabled","true");
+}
+if(GlobalJ2.innerHTML>=100){
+  alert("Félicitation Joueur 2 vous avez gagné");
+  buttonDICE.setAttribute("disabled","true");
+  buttonHOLD.setAttribute("disabled","true");
+}
+}
+//dés a afficher
+function DICE(des){
+switch (des) {
+  case 1:
+    img.src="image/Dice-1.png"
+    break;
+  
+  case 2:
+    img.src="image/Dice-2.png"
+    break;
+  
+  case 3:
+    img.src="image/Dice-3.png"
+    break;
+  
+  case 4:
+    img.src="image/Dice-4.png"
+    break;
+  
+  case 5:
+    img.src="image/Dice-5.png"
+
+    break;
+  
+  case 6:
+    img.src="image/Dice-6.png"
+    break;
+
+
+  default:
+    console.log(img.innerHTML);
+    break;
+}
+}
+function setbackground(){
+  if(player1==true){
+    container1.style.backgroundColor="lightgray"
+    container2.style.backgroundColor="whitesmoke"
+    console.log("changé")
+  }else{
+    container1.style.backgroundColor="whitesmoke"
+    container2.style.backgroundColor="lightgray"
+    console.log("changé")
+  }
+
+
+}
 //creation des events 
 buttonHOLD.addEventListener('click',HOLD);
 buttonDICE.addEventListener('click',ROLL);
